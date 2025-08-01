@@ -28,7 +28,7 @@ class ProductController extends Controller
     //     return redirect()->back()->with('success','Product saved successfully');
     // }
 
-    function store(ProductRequest $request){
+    public function store(ProductRequest $request){
         $validated = $request->validated();
         if($request->hasFile('product_image')){
             $imagePath = $request->file('product_image')->store('product_images','public');
